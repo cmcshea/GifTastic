@@ -11,7 +11,14 @@ $("#buttons").on("click", function () {
     url: queryURL,
     method: "GET"
   }).then(function(response) {
-    console.log(response)
+    console.log(response);
+
+    var results = response.data;
+
+//for loop
+for (var i =0; i < results.length; i++) {
+console.log(results);
+};
   });
  
 });
