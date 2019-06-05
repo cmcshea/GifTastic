@@ -3,11 +3,14 @@ $(document).ready(function () {
 //vars for array of buttons
 var topics = ['Babies','Puppies','Kittens','Ponies', 'Ducklings', 'Bambi', 'Chicks','Pigs','Shrek'];
 
+
 //adding click event listener
-$("#buttons").on("click", function () {
+$("#buttons").on("click", function (topics) {
   var baby = $(this).attr("data-name");
   var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + baby +
     "&api_key=2LWuyvR2In1qc9st20gT4JCWDe2hdENT&limit=10";
+
+    // console.log(topics)
 
   //performing an AJAX request with queryURL
   $.ajax({
@@ -31,7 +34,7 @@ $("#buttons").on("click", function () {
         
         //Creating and storing an img tag
         var babyImage = $("<img>");
-        
+
 
       console.log(results);
 
