@@ -35,8 +35,17 @@ $("#buttons").on("click", function (topics) {
         //Creating and storing an img tag
         var babyImage = $("<img>");
 
+        //setting src attribute of the image to a property
+        babyImage.attr("src", results[i].images.fixed_height.url);
 
-      console.log(results);
+        //appending the p and img tags to babyDiv
+        babyDiv.append(p);
+        babyDiv.append(babyImage);
+
+        //prepending the babyDiv to the HTML page
+        $("#gifs-appear-here").prepend(babyDiv);
+
+      console.log(babyDiv);
 
       };
     });
